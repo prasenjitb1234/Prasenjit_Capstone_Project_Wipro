@@ -71,7 +71,7 @@ public class RegisterStep {
 	}
 	
 	@And("click on continue button to navigate to home page")
-	public void click_on_continue_button_to_navigate_to_home_page() {
+	public void click_on_continue_button_to_navigate_to_home_page() throws InterruptedException {
 		pc.continuebtn_in();
 	}
 

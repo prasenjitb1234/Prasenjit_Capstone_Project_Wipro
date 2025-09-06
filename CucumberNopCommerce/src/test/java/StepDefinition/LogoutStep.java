@@ -28,8 +28,12 @@ public class LogoutStep {
 
 		pc = new PageClass(driver);
 		pc.clickloginlink_in();
+		
+		Thread.sleep(3000);
 		pc.email_in("prasenjitbhosale1234@gmail.com");
 		pc.password_in("Bhosale@1234");
+		
+		Thread.sleep(2000);
 		pc.loginbtn_in();
 
 	}
@@ -37,6 +41,7 @@ public class LogoutStep {
 	@When("click on Logout button")
 	public void click_on_logout_button() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(3000);
 		pc.logoutbtn_in();
 	}
 

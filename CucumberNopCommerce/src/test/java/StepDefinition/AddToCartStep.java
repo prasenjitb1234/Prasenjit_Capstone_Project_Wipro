@@ -27,28 +27,34 @@ public class AddToCartStep {
 	public void page_loads_login_to_website() throws InterruptedException {
 
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.clickloginlink_in();
+		Thread.sleep(3000);
 		pc.email_in("prasenjitbhosale1234@gmail.com");
 		pc.password_in("Bhosale@1234");
+		Thread.sleep(2000);
 		pc.loginbtn_in();
 
 	}
 
 	@And("click on searchbar then  enter an item and search")
-	public void click_on_searchbar_then_enter_an_item_and_search() {
+	public void click_on_searchbar_then_enter_an_item_and_search() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.search();
 	}
 
 	@And("open and view product")
-	public void open_and_view_product() {
+	public void open_and_view_product() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.productdescription();
 	}
 
 	@And("add item to cart")
 	public void add_item_to_cart() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(3000);
 		pc.addtocart_in();
 		Thread.sleep(2000);
 		pc.closepopup();
@@ -56,7 +62,8 @@ public class AddToCartStep {
 	}
 
 	@And("go to cart")
-	public void go_to_cart() {
+	public void go_to_cart() throws InterruptedException {
+		Thread.sleep(3000);
 		pc.shoppingcart_in();
 	}
 

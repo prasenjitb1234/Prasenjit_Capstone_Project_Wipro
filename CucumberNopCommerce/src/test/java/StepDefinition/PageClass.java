@@ -21,7 +21,7 @@ public class PageClass {
 
 	// logout locator :
 
-	By logoutbtn = By.xpath("//li/a[text()=\"Log out\"]");
+	By logoutbtn = By.xpath("//a[@class='ico-logout']");
 
 	// locators login :
 	By loginlink = By.linkText("Log in");
@@ -141,18 +141,13 @@ public class PageClass {
 	// this for register
 	public void email_in() {
 		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-//		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
+		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
 //		emailField.sendKeys("prasenjitbhosale111@gmail.com");
 //		emailField.sendKeys("spiderman01@gmail.com");
-		emailField.sendKeys("prasenjit07@gmail.com");
+//		emailField.sendKeys("prasenjit08@gmail.com");
+//		emailField.sendKeys("prasenjit10@gmail.com");
+		
 
-	}
-
-	// this for login
-	public void email_in(String emailText) {
-		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-		emailField.clear();
-		emailField.sendKeys(emailText);
 	}
 
 	// this for register
@@ -160,6 +155,13 @@ public class PageClass {
 		Thread.sleep(1000);
 		driver.findElement(password).click();
 		driver.findElement(password).sendKeys("Bhosale@1234");
+	}
+
+	// this for login
+	public void email_in(String emailText) {
+		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
+		emailField.clear();
+		emailField.sendKeys(emailText);
 	}
 
 	// this for login
@@ -205,11 +207,12 @@ public class PageClass {
 	}
 
 	public void registerbtn_in() {
-		
+
 		driver.findElement(registerbtn).click();
 	}
 
-	public void continuebtn_in() {
+	public void continuebtn_in() throws InterruptedException {
+		Thread.sleep(2000);
 		WebElement contBtn = wait.until(ExpectedConditions.elementToBeClickable(continuebtn));
 		contBtn.click();
 	}
@@ -232,37 +235,42 @@ public class PageClass {
 
 //	*********** Product Description ***************
 
+	// *********** Product Description ***************
 	public void productdescription() {
-		driver.findElement(productdescription).click();
+		WebElement productDesc = wait.until(ExpectedConditions.elementToBeClickable(productdescription));
+		productDesc.click();
 	}
 
-//	*********** Add to cart ***************
-
+	// *********** Add to cart ***************
 	public void addtocart_in() {
-
-		driver.findElement(addtocartbtn).click();
-
+		WebElement addToCartBtn = wait.until(ExpectedConditions.elementToBeClickable(addtocartbtn));
+		addToCartBtn.click();
 	}
 
+	// ***** Close popup ***************
 	public void closepopup() {
 		WebElement closeBtn = wait.until(ExpectedConditions.elementToBeClickable(closepopupbtn));
 		closeBtn.click();
 	}
 
-	public void shoppingcart_in() {
+	// *********** Shopping Cart *******
+	public void shoppingcart_in() throws InterruptedException {
 		Actions act = new Actions(driver);
-		WebElement shoppingcarthover = driver.findElement(shoppingcart);
-		act.moveToElement(shoppingcarthover).build().perform();
 
-		WebElement gotocart = driver.findElement(gotocartbtn);
-		gotocart.click();
+		WebElement shoppingcartHover = wait.until(ExpectedConditions.visibilityOfElementLocated(shoppingcart));
+		act.moveToElement(shoppingcartHover).perform();
 
+		// Wait until "Go to cart" is visible and clickable
+		Thread.sleep(2000);
+		WebElement goToCart = wait.until(ExpectedConditions.elementToBeClickable(gotocartbtn));
+		goToCart.click();
 	}
 
 	// ********* remove item from cart
 
 	public void removefromcartbtn_in() {
-		driver.findElement(removefromcartbtn).click();
+		WebElement removeBtn = wait.until(ExpectedConditions.elementToBeClickable(removefromcartbtn));
+		removeBtn.click();
 	}
 
 	// ********* change currency dropdown
@@ -291,7 +299,7 @@ public class PageClass {
 		removeBtn.click();
 	}
 
-//	***********  Change Address           *******
+	// ****** ***** Change Adddress ******* ********
 
 	public void myaccount_in() {
 		WebElement myaccount = wait.until(ExpectedConditions.elementToBeClickable(myaccountbtn));
@@ -309,141 +317,174 @@ public class PageClass {
 	}
 
 	public void newfilladdress_in() {
+		WebElement firstName = wait.until(ExpectedConditions.visibilityOfElementLocated(addressfname));
+		firstName.clear();
+		firstName.sendKeys("Prasenjit");
 
-		driver.findElement(addressfname).sendKeys("Prasenjit");
-		driver.findElement(addresslname).sendKeys("Bhosale");
-		driver.findElement(addressemail).sendKeys("prasenjitbhosale1234@gmail.com");
-		driver.findElement(addresscompany).sendKeys("Wipro");
+		WebElement lastName = wait.until(ExpectedConditions.visibilityOfElementLocated(addresslname));
+		lastName.clear();
+		lastName.sendKeys("Bhosale");
+
+		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(addressemail));
+		emailField.clear();
+		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
+
+		WebElement companyField = wait.until(ExpectedConditions.visibilityOfElementLocated(addresscompany));
+		companyField.clear();
+		companyField.sendKeys("Wipro");
 
 		WebElement countrydropdown = wait.until(ExpectedConditions.elementToBeClickable(addresscountrydropdown));
-		Select select = new Select(countrydropdown);
-		select.selectByValue("104"); // india
+		new Select(countrydropdown).selectByValue("104"); // India
 
 		WebElement statedropdown = wait.until(ExpectedConditions.elementToBeClickable(addressstatedropdown));
-		Select select1 = new Select(statedropdown);
-		select1.selectByVisibleText("Maharashtra"); // maharashtra
+		new Select(statedropdown).selectByVisibleText("Maharashtra");
 
-		driver.findElement(addresscity).sendKeys("Pune");
-		driver.findElement(addressprimary).sendKeys("Generic Sociaty,  M.K Gandhi Road");
-		driver.findElement(addresssecondary).sendKeys("near D. Y Patil Stadium");
+		WebElement city = wait.until(ExpectedConditions.visibilityOfElementLocated(addresscity));
+		city.clear();
+		city.sendKeys("Pune");
 
-		driver.findElement(addresszipcode).sendKeys("415001");
-		driver.findElement(addressphonenumber).sendKeys("1234567890");
+		WebElement address1 = wait.until(ExpectedConditions.visibilityOfElementLocated(addressprimary));
+		address1.clear();
+		address1.sendKeys("Generic Sociaty, M.K Gandhi Road");
 
+		WebElement address2 = wait.until(ExpectedConditions.visibilityOfElementLocated(addresssecondary));
+		address2.clear();
+		address2.sendKeys("near D. Y Patil Stadium");
+
+		WebElement zip = wait.until(ExpectedConditions.visibilityOfElementLocated(addresszipcode));
+		zip.clear();
+		zip.sendKeys("415001");
+
+		WebElement phone = wait.until(ExpectedConditions.visibilityOfElementLocated(addressphonenumber));
+		phone.clear();
+		phone.sendKeys("1234567890");
 	}
 
 	public void savebtn_in() {
-		driver.findElement(savebtnaddress).click();
+		WebElement saveBtn = wait.until(ExpectedConditions.elementToBeClickable(savebtnaddress));
+		saveBtn.click();
+	}
+
+	public boolean isLoggedIn() {
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(myaccountbtn));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	// ********* change password *********************************
 
 	public void changepasswordtablink_in() {
-	    WebElement changePasswordTab = wait.until(ExpectedConditions.elementToBeClickable(changepasswordtablink));
-	    changePasswordTab.click();
+		WebElement changePasswordTab = wait.until(ExpectedConditions.elementToBeClickable(changepasswordtablink));
+		changePasswordTab.click();
 	}
 
 	public void oldpasswordchange_in() {
-	    WebElement oldPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(oldpasswordchange));
-	    oldPasswordField.clear();
-	    oldPasswordField.sendKeys("bhosale@1234");
+		WebElement oldPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(oldpasswordchange));
+		oldPasswordField.clear();
+		oldPasswordField.sendKeys("bhosale@1234");
 	}
 
 	public void newpasswordchange_in() {
-	    WebElement newPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(newpasswordchange));
-	    newPasswordField.clear();
-	    newPasswordField.sendKeys("Bhosale@1234");
+		WebElement newPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(newpasswordchange));
+		newPasswordField.clear();
+		newPasswordField.sendKeys("Bhosale@1234");
 	}
 
 	public void confirmnewpasswordchange_in() {
-	    WebElement confirmNewPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmnewpasswordchange));
-	    confirmNewPasswordField.clear();
-	    confirmNewPasswordField.sendKeys("Bhosale@1234");
+		WebElement confirmNewPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmnewpasswordchange));
+		confirmNewPasswordField.clear();
+		confirmNewPasswordField.sendKeys("Bhosale@1234");
 	}
 
 	public void changepassbtn_in() {
-	    WebElement changePassButton = wait.until(ExpectedConditions.elementToBeClickable(changepassbtn));
-	    changePassButton.click();
+		WebElement changePassButton = wait.until(ExpectedConditions.elementToBeClickable(changepassbtn));
+		changePassButton.click();
 	}
-
 
 	// ********* checkout *********************************
 
 	public void checkboxterms_in() {
-	    WebElement termsCheckbox = wait.until(ExpectedConditions.elementToBeClickable(termsofservicecheckbox));
-	    termsCheckbox.click();
+		WebElement termsCheckbox = wait.until(ExpectedConditions.elementToBeClickable(termsofservicecheckbox));
+		termsCheckbox.click();
 	}
 
 	public void checkoutbtn_in() {
-	    WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(checkoutbtn));
-	    checkoutButton.click();
+		WebElement checkoutButton = wait.until(ExpectedConditions.elementToBeClickable(checkoutbtn));
+		checkoutButton.click();
 	}
 
-	public void continuecheckoutbtn_in() {
-	    WebElement continueCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(continuecheckoutbtn));
-	    continueCheckoutButton.click();
+	public void continuecheckoutbtn_in() throws InterruptedException {
+
+		WebElement continueCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(continuecheckoutbtn));
+		continueCheckoutButton.click();
+
 	}
 
 	public void continueshippingcheckoutbtn_in() {
-	    WebElement continueShippingButton = wait.until(ExpectedConditions.elementToBeClickable(continuenextstepcheckoutbtn));
-	    continueShippingButton.click();
+		WebElement continueShippingButton = wait
+				.until(ExpectedConditions.elementToBeClickable(continuenextstepcheckoutbtn));
+		continueShippingButton.click();
 	}
 
 	public void continuepaymentbtn_in() {
-	    WebElement continuePaymentButton = wait.until(ExpectedConditions.elementToBeClickable(conntinuepaymentbtn));
-	    continuePaymentButton.click();
+		WebElement continuePaymentButton = wait.until(ExpectedConditions.elementToBeClickable(conntinuepaymentbtn));
+		continuePaymentButton.click();
 	}
 
 	public void continuePaymentinformationbtn_in() {
-	    WebElement continuePaymentInfoButton = wait.until(ExpectedConditions.elementToBeClickable(continuePaymentinformationbtn));
-	    continuePaymentInfoButton.click();
+		WebElement continuePaymentInfoButton = wait
+				.until(ExpectedConditions.elementToBeClickable(continuePaymentinformationbtn));
+		continuePaymentInfoButton.click();
 	}
 
 	public void confirmcheckoutbtn_in() {
-	    WebElement confirmCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(confirmcheckoutbtn));
-	    confirmCheckoutButton.click();
+		WebElement confirmCheckoutButton = wait.until(ExpectedConditions.elementToBeClickable(confirmcheckoutbtn));
+		confirmCheckoutButton.click();
 	}
 
 	public void orderdetailspagelink_in() {
-	    WebElement orderDetailsLink = wait.until(ExpectedConditions.elementToBeClickable(orderdetailspagelink));
-	    orderDetailsLink.click();
+		WebElement orderDetailsLink = wait.until(ExpectedConditions.elementToBeClickable(orderdetailspagelink));
+		orderDetailsLink.click();
 	}
 
 	public void viewAllorderinformationpage_in() {
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(0,800)");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,800)");
 	}
 
 	public void allOrderspage_in() {
-	    WebElement allOrdersLink = wait.until(ExpectedConditions.elementToBeClickable(allorderslink));
-	    allOrdersLink.click();
+		WebElement allOrdersLink = wait.until(ExpectedConditions.elementToBeClickable(allorderslink));
+		allOrdersLink.click();
 	}
-
 
 //	***************** Compare Product button ***********************************
 
 	public void compareprodbtn_in() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement compareBtn = wait.until(ExpectedConditions.elementToBeClickable(compareproductbtn));
-	    compareBtn.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement compareBtn = wait.until(ExpectedConditions.elementToBeClickable(compareproductbtn));
+		compareBtn.click();
 	}
 
 	public void compareproductlisttab_in() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    WebElement compareTab = wait.until(ExpectedConditions.elementToBeClickable(compareproductlisttab));
-	    compareTab.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement compareTab = wait.until(ExpectedConditions.elementToBeClickable(compareproductlisttab));
+		compareTab.click();
 	}
-
 
 	// ***************** logout button ***********************************
 
 	public void logoutbtn_in() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-	    WebElement logout = wait.until(ExpectedConditions.elementToBeClickable(logoutbtn));
-	    logout.click();
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(logoutbtn));
+
+		WebElement logout = wait.until(ExpectedConditions.elementToBeClickable(logoutbtn));
+		logout.click();
 	}
 
 //	***************************************************************************
-
 
 }

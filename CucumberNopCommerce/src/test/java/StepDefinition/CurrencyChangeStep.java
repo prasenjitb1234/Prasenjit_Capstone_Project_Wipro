@@ -27,8 +27,9 @@ public class CurrencyChangeStep {
 	}
 
 	@When("Page Loads click on Currency Change Dropdown and select currency")
-	public void page_loads_click_on_currency_change_dropdown_and_select_currency() {
+	public void page_loads_click_on_currency_change_dropdown_and_select_currency() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(3000);
 		pc.changecurrencydropdown_in();
 
 	}

@@ -46,7 +46,7 @@ public class WishlistStep {
 	}
 
 	@And("close wishlist popup")
-	public void close_wishlist_popup() {
+	public void close_wishlist_popup() throws InterruptedException {
 		pc = new PageClass(driver);
 		pc.closepopup();
 	}
@@ -55,6 +55,7 @@ public class WishlistStep {
 	public void click_on_wishlist_button_in_navbar() throws InterruptedException {
 
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.wishlist_in();
 	}
 
@@ -62,6 +63,7 @@ public class WishlistStep {
 	public void remove_item_from_wishlist() throws InterruptedException {
 
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.removefromwishlist();
 	}
 

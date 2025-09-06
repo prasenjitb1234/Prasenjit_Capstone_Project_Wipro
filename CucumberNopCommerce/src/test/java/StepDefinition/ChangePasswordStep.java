@@ -27,26 +27,31 @@ public class ChangePasswordStep {
 	public void page_loads_fully_click_on_log_in_then_click_on_myaccount() throws InterruptedException {
 		pc = new PageClass(driver);
 		// login 
+		Thread.sleep(2000);
 		pc.clickloginlink_in();
+		Thread.sleep(2000);
 		pc.email_in("prasenjitbhosale01@gmail.com");
 		pc.password_in("Bhosale@1234");
+		Thread.sleep(2000);
 		pc.loginbtn_in();
 
 		// click on my account
-
+		Thread.sleep(3000);
 		pc.myaccount_in();
 
 	}
 
 	@And("click on Change password")
-	public void click_on_change_password() {
+	public void click_on_change_password() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.changepasswordtablink_in();
 	}
 
 	@And("click on old password and add existing password")
-	public void click_on_old_password_and_add_existing_password() {
+	public void click_on_old_password_and_add_existing_password() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.oldpasswordchange_in();
 	}
 
@@ -63,8 +68,9 @@ public class ChangePasswordStep {
 	}
 	
 	@And("click on change password button")
-	public void click_on_change_password_button() {
+	public void click_on_change_password_button() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(1000);
 		pc.changepassbtn_in();
 	}
 

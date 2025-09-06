@@ -36,15 +36,15 @@ public class CompareProductStep {
 		WebElement computer = driver.findElement(By.linkText("Computers"));
 		act.moveToElement(computer).build().perform();
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement notebook = driver.findElement(By.linkText("Notebooks"));
 		act.moveToElement(notebook).build().perform();
 		notebook.click();
 
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,300)");
+		js.executeScript("window.scrollBy(0,350)");
 	}
 
 	@And("add first product to compare")
@@ -65,7 +65,7 @@ public class CompareProductStep {
 	@And("add second product to compare")
 	public void add_second_product_to_compare() throws InterruptedException {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,600)");
+		js.executeScript("window.scrollBy(0,650)");
 		WebElement secondprod = driver.findElement(By.linkText("HP Spectre XT Pro UltraBook"));
 
 		secondprod.click();

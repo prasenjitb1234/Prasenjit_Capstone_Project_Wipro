@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="317.071" tests="15" skipped="0" failures="4" errors="0" timestamp="2025-09-06T11:36:28.145046600Z">
+<testcase classname="Check user is able to register to nopcommerce website" name="Successful Registration" time="13.989">
+<system-out><![CDATA[
+Given Register page should open in default browser..........................passed
+When Page Loads click on Register button....................................passed
+And Select Gender...........................................................passed
+And click on First Name and add First Name..................................passed
+And click on Last Name and add Last Name....................................passed
+And click on Email and add your email.......................................passed
+And click on Company and add Company name...................................passed
+And click on Password and add password......................................passed
+And click on Confirm Password and enter Confirm Password....................passed
+And click on Register Button................................................passed
+And click on continue button to navigate to home page.......................passed
+Then Successfully Registered and open home page.............................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to login using valid credentials" name="Login with multiple credentials - #1.1" time="26.166">
+<system-out><![CDATA[
+Given Login Page should open in default browser.............................passed
+When Page Loads click on Log In Button......................................passed
+And click on email and enter "prasenjitbhosale1234@gmail.com"...............passed
+And click on password and enter "Bhosale@1234"..............................passed
+And click on login button...................................................passed
+Then login successful and "true"............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to search product" name="check search is Succesful - #1.1" time="11.918">
+<system-out><![CDATA[
+Given Login User and search bar available...................................passed
+When Enter laptop  and click search button..................................passed
+Then list of output relevant to input.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to search product" name="check search is Succesful - #1.2" time="10.044">
+<system-out><![CDATA[
+Given Login User and search bar available...................................passed
+When Enter shoes  and click search button...................................passed
+Then list of output relevant to input.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to search product" name="check search is Succesful - #1.3" time="9.228">
+<system-out><![CDATA[
+Given Login User and search bar available...................................passed
+When Enter phone  and click search button...................................passed
+Then list of output relevant to input.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to search product" name="check search is Succesful - #1.4" time="11.52">
+<system-out><![CDATA[
+Given Login User and search bar available...................................passed
+When Enter book  and click search button....................................passed
+Then list of output relevant to input.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to view Product description" name="" time="9.025">
+<system-out><![CDATA[
+Given open website for view product.........................................passed
+When Page loads click on search enter item and search.......................passed
+And click on product........................................................passed
+Then successful viewed product description..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to add item to cart" name="Successfully added item to cart" time="38.861">
+<system-out><![CDATA[
+Given Open Website and add to cart..........................................passed
+When Page loads login to website............................................passed
+And click on searchbar then  enter an item and search.......................passed
+And open and view product...................................................passed
+And add item to cart........................................................passed
+And go to cart..............................................................passed
+Then successful add item to cart............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to remove item from the cart" name="" time="26.877">
+<system-out><![CDATA[
+Given Open Website and hover check shopping cart............................passed
+When Page loads first login to the website for smooth cart flow.............passed
+And Hover over shopping cart and click on go to cart........................passed
+And Click on remove product cross button....................................passed
+Then successful item removed from cart......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to change currency" name="Successfully change currency" time="12.526">
+<system-out><![CDATA[
+Given open website and currencybox available................................passed
+When Page Loads click on Currency Change Dropdown and select currency.......passed
+Then Successful changed currency............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="compare product" name="successfully compare product" time="17.905">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;Notebooks&quot;}
+  (Session info: chrome=139.0.7258.155)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81ed7a2b0dbd7064cdb267fb29e884e0, findElement {value=Notebooks, using=link text}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59320}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59320/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81ed7a2b0dbd7064cdb267fb29e884e0">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"link text","selector":"Notebooks"}
+  (Session info: chrome=139.0.7258.155)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [81ed7a2b0dbd7064cdb267fb29e884e0, findElement {value=Notebooks, using=link text}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59320}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59320/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 81ed7a2b0dbd7064cdb267fb29e884e0
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at StepDefinition.CompareProductStep.page_loads_hover_on_computers_and_go_to_notebooks(CompareProductStep.java:40)
+	at ✽.Page loads hover on computers and go to notebooks(file:///C:/Users/prase/git/Prasenjit_Capstone_Project_Wipro/CucumberNopCommerce/src/test/resources/features/08CompareProduct.feature:5)
+]]>
+</failure>
+<system-out><![CDATA[
+Given open website to compare...............................................passed
+When Page loads hover on computers and go to notebooks......................failed
+And add first product to compare............................................skipped
+And add second product to compare...........................................skipped
+And go to compare products list and wait and scroll down....................skipped
+Then successfully compared product..........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to add new address" name="Successfully Added new Address" time="24.582">
+<failure type="java.lang.RuntimeException" message="Login failed - please check credentials!">
+<![CDATA[java.lang.RuntimeException: Login failed - please check credentials!
+	at StepDefinition.AddNewAddressStep.page_loads_login_and_click_on_my_account(AddNewAddressStep.java:45)
+	at ✽.Page Loads Login and click on My Account(file:///C:/Users/prase/git/Prasenjit_Capstone_Project_Wipro/CucumberNopCommerce/src/test/resources/features/09AddAddress.feature:5)
+]]>
+</failure>
+<system-out><![CDATA[
+Given Website must open in default browser..................................passed
+When Page Loads Login and click on My Account...............................failed
+And click on addresses......................................................skipped
+And click on add new Button.................................................skipped
+And fill address information................................................skipped
+And click on save button....................................................skipped
+Then successful add a new address...........................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to checkout" name="Successfully checkout an item" time="44.154">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for element to be clickable: By.xpath: //button[@class=&quot;button-1 new-address-next-step-button&quot;][1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65428}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65428/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c8eca25d63c423643920a5316ac314c8">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //button[@class="button-1 new-address-next-step-button"][1] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65428}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65428/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c8eca25d63c423643920a5316ac314c8
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at StepDefinition.PageClass.continuecheckoutbtn_in(PageClass.java:421)
+	at StepDefinition.CheckoutStep.click_on_continue_button_billing_addresss_step(CheckoutStep.java:84)
+	at ✽.click on continue button billing addresss step(file:///C:/Users/prase/git/Prasenjit_Capstone_Project_Wipro/CucumberNopCommerce/src/test/resources/features/10Checkout.feature:11)
+]]>
+</failure>
+<system-out><![CDATA[
+Given open website in default browser.......................................passed
+When Page loads click login account.........................................passed
+And search an item..........................................................passed
+And open product description................................................passed
+And add that product to cart and go to cart.................................passed
+And click on checkbox of terms of service...................................passed
+And click on checkout button................................................passed
+And click on continue button billing addresss step..........................failed
+And click on continue button shipping method step...........................skipped
+And click on continue button payment method step............................skipped
+And click on continue button payment information step.......................skipped
+And click on confirm button confirm order step..............................skipped
+And click on order details link.............................................skipped
+And view order information page.............................................skipped
+And see all your order in all orders page...................................skipped
+Then successful checked out item............................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="Check user is able to add and remove item to wishlist" name="Successfully added item to wishlist" time="22.331">
+<system-out><![CDATA[
+Given Website should open in default browser................................passed
+When Page loads click on searchbar and enter product........................passed
+And view product............................................................passed
+And Add item to Wishlist....................................................passed
+And close wishlist popup....................................................passed
+And click on wishlist button in navbar......................................passed
+And remove item from wishlist...............................................passed
+Then successful updatation in cart..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="check user is able to logout from website" name="successful logout" time="37.57">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of element located by By.xpath: //a[@class='ico-logout'] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53106}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53106/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f33f8878aa77ab679a89cc2853368f28">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //a[@class='ico-logout'] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '4.34.0', revision: '2a4c61c498'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53106}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53106/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f33f8878aa77ab679a89cc2853368f28
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at StepDefinition.PageClass.logoutbtn_in(PageClass.java:482)
+	at StepDefinition.LogoutStep.click_on_logout_button(LogoutStep.java:45)
+	at ✽.click on Logout button(file:///C:/Users/prase/git/Prasenjit_Capstone_Project_Wipro/CucumberNopCommerce/src/test/resources/features/12Logout.feature:6)
+]]>
+</failure>
+<system-out><![CDATA[
+Given page should open in default browser...................................passed
+When the page loads first login to the website..............................passed
+And click on Logout button..................................................failed
+Then successfully logged out................................................skipped
+]]></system-out>
+</testcase>
+</testsuite>

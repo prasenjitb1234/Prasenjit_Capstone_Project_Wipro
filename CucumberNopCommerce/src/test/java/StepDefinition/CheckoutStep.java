@@ -79,7 +79,7 @@ public class CheckoutStep {
 	}
 
 	@And("click on continue button billing addresss step")
-	public void click_on_continue_button_billing_addresss_step() {
+	public void click_on_continue_button_billing_addresss_step() throws InterruptedException {
 		pc = new PageClass(driver);
 		pc.continuecheckoutbtn_in();
 	}

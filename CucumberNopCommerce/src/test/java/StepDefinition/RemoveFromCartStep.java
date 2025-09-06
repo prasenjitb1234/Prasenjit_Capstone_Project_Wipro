@@ -27,14 +27,17 @@ public class RemoveFromCartStep {
 	@When("Page loads first login to the website for smooth cart flow")
 	public void page_loads_first_login_to_the_website_for_smooth_cart_flow() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.clickloginlink_in();
+		Thread.sleep(2000);
 		pc.email_in("prasenjitbhosale1234@gmail.com");
 		pc.password_in("Bhosale@1234");
+		Thread.sleep(2000);
 		pc.loginbtn_in();
 	}
 
 	@When("Hover over shopping cart and click on go to cart")
-	public void hover_over_shopping_cart_and_click_on_go_to_cart() {
+	public void hover_over_shopping_cart_and_click_on_go_to_cart() throws InterruptedException {
 		pc = new PageClass(driver);
 
 //		pc.search();
@@ -47,6 +50,7 @@ public class RemoveFromCartStep {
 //		Thread.sleep(3000);
 
 		// above things we comment when run with test runner but not when individual run
+		Thread.sleep(2000);
 		pc.shoppingcart_in();
 	}
 

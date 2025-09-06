@@ -28,39 +28,50 @@ public class AddNewAddressStep {
 	@When("Page Loads Login and click on My Account")
 	public void page_loads_login_and_click_on_my_account() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.clickloginlink_in();
+		Thread.sleep(2000);
 		pc.email_in("prasenjitbhosale1234@gmail.com");
 		pc.password_in("Bhosale@1234");
+		
+		Thread.sleep(2000);
 		pc.loginbtn_in();
 
-		// click on my account
+		// then click on my account
 
-		Thread.sleep(3000);
-		pc.myaccount_in();
+		if (pc.isLoggedIn()) {
+			pc.myaccount_in();
+		} else {
+			throw new RuntimeException("Login failed - please check credentials!");
+		}
 
 	}
 
 	@And("click on addresses")
-	public void click_on_addresses() {
+	public void click_on_addresses() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(3000);
 		pc.addresses_in();
 	}
 
 	@And("click on add new Button")
-	public void click_on_add_new_button() {
+	public void click_on_add_new_button() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.addnewaddressbtn_in();
 	}
 
 	@And("fill address information")
-	public void fill_address_information() {
+	public void fill_address_information() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.newfilladdress_in();
 	}
 
 	@And("click on save button")
-	public void click_on_save_button() {
+	public void click_on_save_button() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(2000);
 		pc.savebtn_in();
 
 	}
