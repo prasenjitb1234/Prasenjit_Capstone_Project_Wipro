@@ -141,11 +141,12 @@ public class PageClass {
 	// this for register
 	public void email_in() {
 		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
+//		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
 //		emailField.sendKeys("prasenjitbhosale111@gmail.com");
 //		emailField.sendKeys("spiderman01@gmail.com");
 //		emailField.sendKeys("prasenjit08@gmail.com");
 //		emailField.sendKeys("prasenjit10@gmail.com");
+		emailField.sendKeys("prasenjit11@gmail.com");
 		
 
 	}
