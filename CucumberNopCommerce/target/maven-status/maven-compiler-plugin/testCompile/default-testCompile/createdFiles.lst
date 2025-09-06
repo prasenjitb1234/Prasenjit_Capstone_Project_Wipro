@@ -1,0 +1,15 @@
+StepDefinition\PageClass.class
+StepDefinition\ChangePasswordStep.class
+StepDefinition\ProductDescriptionStep.class
+StepDefinition\CompareProductStep.class
+StepDefinition\AddToCartStep.class
+StepDefinition\RegisterStep.class
+StepDefinition\CurrencyChangeStep.class
+StepDefinition\AddNewAddressStep.class
+StepDefinition\LogoutStep.class
+StepDefinition\LoginStep.class
+StepDefinition\CheckoutStep.class
+StepDefinition\SearchSteps.class
+StepDefinition\RemoveFromCartStep.class
+StepDefinition\TestRunner.class
+StepDefinition\WishlistStep.class
