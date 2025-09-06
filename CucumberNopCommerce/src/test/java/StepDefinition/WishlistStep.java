@@ -48,6 +48,7 @@ public class WishlistStep {
 	@And("close wishlist popup")
 	public void close_wishlist_popup() throws InterruptedException {
 		pc = new PageClass(driver);
+		Thread.sleep(5000);
 		pc.closepopup();
 	}
 

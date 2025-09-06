@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: StepDefinition.TestRunner
+-------------------------------------------------------------------------------
+Tests run: 15, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 553.0 s <<< FAILURE! -- in StepDefinition.TestRunner
+Check user is able to add and remove item to wishlist.Successfully added item to wishlist -- Time elapsed: 18.76 s <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.xpath: //span[@class="close"] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.23.0', revision: '4df0a231af'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\prase\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60962}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60962/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b83ccc0bd53b651d889c720d16144727
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at StepDefinition.PageClass.closepopup(PageClass.java:253)
+	at StepDefinition.WishlistStep.close_wishlist_popup(WishlistStep.java:51)
+	at ✽.close wishlist popup(file:///C:/Users/prase/git/Prasenjit_Capstone_Project_Wipro/CucumberNopCommerce/src/test/resources/features/11Wishlist.feature:9)
+
