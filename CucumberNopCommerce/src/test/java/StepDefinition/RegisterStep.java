@@ -20,7 +20,7 @@ public class RegisterStep {
         driver = new ChromeDriver();
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
         pc = new PageClass(driver);
     }
 
@@ -71,13 +71,21 @@ public class RegisterStep {
 
     @And("click on continue button to navigate to home page")
     public void click_on_continue_button_to_navigate_to_home_page() {
-        pc.continuebtn_in();
+//        pc.continuebtn_in();
+        pc.clickContinueIfPresent();
     }
 
     @Then("Successfully Registered and open home page")
     public void successfully_registered_and_open_home_page() {
-        System.out.println("User registered successfully!");
-        driver.quit();
+        if (pc.isDuplicateEmailError()) {
+            System.out.println("Registration failed: Duplicate email.");
+            driver.quit();   
+        } else {
+            System.out.println("User registered successfully!");
+            driver.quit();
+        }
     }
+
+
 
 }

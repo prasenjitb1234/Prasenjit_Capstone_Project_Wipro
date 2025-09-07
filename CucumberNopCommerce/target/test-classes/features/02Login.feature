@@ -28,10 +28,9 @@ Examples:
   | prasenjitbhosale1234@gmail.com  | Bhosale@1234   | true   |
   | prasenjit101@gmail.com          | Bhosale@1234   | true   |
   | peter01@gmail.com               | Bhosale@1234   | true   |
+   | peter02@gmail.com               | Bhosale@1234   | true   |
 
-  
-  
-  
+
 #    | spiderman01@gmail.com | spiderman01 | true   |
 #    | spiderman02@gmail.com | spiderman02 | true   | 
 #    | prasenjitbhosale10@gmail.com | Bhosale@1234  | true   |

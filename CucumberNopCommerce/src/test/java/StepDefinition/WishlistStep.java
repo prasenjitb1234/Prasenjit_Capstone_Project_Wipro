@@ -2,6 +2,7 @@ package StepDefinition;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -48,8 +49,8 @@ public class WishlistStep {
 	@And("close wishlist popup")
 	public void close_wishlist_popup() throws InterruptedException {
 		pc = new PageClass(driver);
-		Thread.sleep(5000);
-		pc.closepopup();
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//div[@class=\"bar-notification success\"]//span[@class=\"close\"]")).click();
 	}
 
 	@And("click on wishlist button in navbar")

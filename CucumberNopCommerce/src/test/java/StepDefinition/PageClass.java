@@ -214,6 +214,28 @@ public class PageClass {
 			return false;
 		}
 	}
+	
+	public boolean isDuplicateEmailError() {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	        WebElement error = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='message-error validation-summary-errors']//li[contains(text(),'email already exists')]")));
+	        return error.isDisplayed();
+	    } catch (TimeoutException e) {
+	        return false; 
+	    }
+	}
+
+	public boolean clickContinueIfPresent() {
+	    try {
+	        WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(4));
+	        WebElement btn = shortWait.until(ExpectedConditions.elementToBeClickable(continuebtn));
+	        btn.click();
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false; 
+	    }
+	}
+
 
 //	*********** search Multiple***************
 
