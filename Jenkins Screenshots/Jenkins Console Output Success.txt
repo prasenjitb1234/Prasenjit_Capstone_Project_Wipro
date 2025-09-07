@@ -1,0 +1,693 @@
+Started by user unknown or anonymous
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/prasenjitb1234/Prasenjit_Capstone_Project_Wipro.git # timeout=10
+Fetching upstream changes from https://github.com/prasenjitb1234/Prasenjit_Capstone_Project_Wipro.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.47.0.windows.2'
+ > git.exe fetch --tags --force --progress -- https://github.com/prasenjitb1234/Prasenjit_Capstone_Project_Wipro.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/main^{commit}" # timeout=10
+Checking out Revision 1a4f05c0c5d52b97f2144be8014959d4cbdbbff0 (refs/remotes/origin/main)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f 1a4f05c0c5d52b97f2144be8014959d4cbdbbff0 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D main # timeout=10
+ > git.exe checkout -b main 1a4f05c0c5d52b97f2144be8014959d4cbdbbff0 # timeout=10
+Commit message: "made some changes to capsonte project for jenkins : added Proper Waits"
+ > git.exe rev-list --no-walk 37e93b472a5848b33705b68ad388bd5c9034df4b # timeout=10
+[Pipeline] dir
+Running in C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce
+[Pipeline] {
+[Pipeline] bat
+
+C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce>mvn -Dmaven.test.failure.ignore=true clean package 
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< CucumberNopCommerce:CucumberNopCommerce >---------------
+[INFO] Building CucumberNopCommerce 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ CucumberNopCommerce ---
+[INFO] Deleting C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ CucumberNopCommerce ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ CucumberNopCommerce ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ CucumberNopCommerce ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 12 resources from src\test\resources to target\test-classes
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ CucumberNopCommerce ---
+[INFO] Recompiling the module because of changed source code.
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 15 source files with javac [debug target 1.8] to target\test-classes
+[WARNING] bootstrap class path not set in conjunction with -source 8
+[WARNING] source value 8 is obsolete and will be removed in a future release
+[WARNING] target value 8 is obsolete and will be removed in a future release
+[WARNING] To suppress warnings about obsolete options, use -Xlint:-options.
+[INFO] /C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/java/StepDefinition/TestRunner.java: C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce\src\test\java\StepDefinition\TestRunner.java uses or overrides a deprecated API.
+[INFO] /C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/java/StepDefinition/TestRunner.java: Recompile with -Xlint:deprecation for details.
+[INFO] 
+[INFO] --- surefire:3.5.3:test (default-test) @ CucumberNopCommerce ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running StepDefinition.TestRunner
+
+@Priority01
+Scenario Outline: Successful Registration                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/01Register.feature:21
+Sept 07, 2025 10:37:42 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:37:42 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Register page should open in default browser    # StepDefinition.RegisterStep.register_page_should_open_in_default_browser()
+  ? When Page Loads click on Register button              # StepDefinition.RegisterStep.page_loads_click_on_register_button()
+  ? And Select Gender                                     # StepDefinition.RegisterStep.select_gender()
+  ? And click on First Name and add Prasenjit             # StepDefinition.RegisterStep.click_on_first_name_and_add(java.lang.String)
+  ? And click on Last Name and add Bhosale                # StepDefinition.RegisterStep.click_on_last_name_and_add(java.lang.String)
+  ? And click on Email and add prasenjit101@gmail.com     # StepDefinition.RegisterStep.click_on_email_and_add(java.lang.String)
+  ? And click on Company and add Wipro                    # StepDefinition.RegisterStep.click_on_company_and_add(java.lang.String)
+  ? And click on Password and add Bhosale@1234            # StepDefinition.RegisterStep.click_on_password_and_add(java.lang.String)
+  ? And click on Confirm Password and enter Bhosale@1234  # StepDefinition.RegisterStep.click_on_confirm_password_and_enter(java.lang.String)
+  ? And click on Register Button                          # StepDefinition.RegisterStep.click_on_register_button()
+  ? And click on continue button to navigate to home page # StepDefinition.RegisterStep.click_on_continue_button_to_navigate_to_home_page()
+Registration failed: Duplicate email.
+  ? Then Successfully Registered and open home page       # StepDefinition.RegisterStep.successfully_registered_and_open_home_page()
+
+@Priority01
+Scenario Outline: Successful Registration                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/01Register.feature:22
+Sept 07, 2025 10:37:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:37:56 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Register page should open in default browser    # StepDefinition.RegisterStep.register_page_should_open_in_default_browser()
+  ? When Page Loads click on Register button              # StepDefinition.RegisterStep.page_loads_click_on_register_button()
+  ? And Select Gender                                     # StepDefinition.RegisterStep.select_gender()
+  ? And click on First Name and add Prasenjit             # StepDefinition.RegisterStep.click_on_first_name_and_add(java.lang.String)
+  ? And click on Last Name and add Bhosale                # StepDefinition.RegisterStep.click_on_last_name_and_add(java.lang.String)
+  ? And click on Email and add prasenjit1234@gmail.com    # StepDefinition.RegisterStep.click_on_email_and_add(java.lang.String)
+  ? And click on Company and add Wipro                    # StepDefinition.RegisterStep.click_on_company_and_add(java.lang.String)
+  ? And click on Password and add Bhosale@1234            # StepDefinition.RegisterStep.click_on_password_and_add(java.lang.String)
+  ? And click on Confirm Password and enter Bhosale@1234  # StepDefinition.RegisterStep.click_on_confirm_password_and_enter(java.lang.String)
+  ? And click on Register Button                          # StepDefinition.RegisterStep.click_on_register_button()
+  ? And click on continue button to navigate to home page # StepDefinition.RegisterStep.click_on_continue_button_to_navigate_to_home_page()
+Registration failed: Duplicate email.
+  ? Then Successfully Registered and open home page       # StepDefinition.RegisterStep.successfully_registered_and_open_home_page()
+
+@Priority01
+Scenario Outline: Successful Registration                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/01Register.feature:23
+Sept 07, 2025 10:38:20 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:38:20 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Register page should open in default browser    # StepDefinition.RegisterStep.register_page_should_open_in_default_browser()
+  ? When Page Loads click on Register button              # StepDefinition.RegisterStep.page_loads_click_on_register_button()
+  ? And Select Gender                                     # StepDefinition.RegisterStep.select_gender()
+  ? And click on First Name and add Peter                 # StepDefinition.RegisterStep.click_on_first_name_and_add(java.lang.String)
+  ? And click on Last Name and add Parker                 # StepDefinition.RegisterStep.click_on_last_name_and_add(java.lang.String)
+  ? And click on Email and add peter01@gmail.com          # StepDefinition.RegisterStep.click_on_email_and_add(java.lang.String)
+  ? And click on Company and add Wipro                    # StepDefinition.RegisterStep.click_on_company_and_add(java.lang.String)
+  ? And click on Password and add Bhosale@1234            # StepDefinition.RegisterStep.click_on_password_and_add(java.lang.String)
+  ? And click on Confirm Password and enter Bhosale@1234  # StepDefinition.RegisterStep.click_on_confirm_password_and_enter(java.lang.String)
+  ? And click on Register Button                          # StepDefinition.RegisterStep.click_on_register_button()
+  ? And click on continue button to navigate to home page # StepDefinition.RegisterStep.click_on_continue_button_to_navigate_to_home_page()
+Registration failed: Duplicate email.
+  ? Then Successfully Registered and open home page       # StepDefinition.RegisterStep.successfully_registered_and_open_home_page()
+
+@Priority01
+Scenario Outline: Successful Registration                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/01Register.feature:24
+Sept 07, 2025 10:38:35 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:38:35 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Register page should open in default browser    # StepDefinition.RegisterStep.register_page_should_open_in_default_browser()
+  ? When Page Loads click on Register button              # StepDefinition.RegisterStep.page_loads_click_on_register_button()
+  ? And Select Gender                                     # StepDefinition.RegisterStep.select_gender()
+  ? And click on First Name and add Peter                 # StepDefinition.RegisterStep.click_on_first_name_and_add(java.lang.String)
+  ? And click on Last Name and add Parker                 # StepDefinition.RegisterStep.click_on_last_name_and_add(java.lang.String)
+  ? And click on Email and add peter02@gmail.com          # StepDefinition.RegisterStep.click_on_email_and_add(java.lang.String)
+  ? And click on Company and add Wipro                    # StepDefinition.RegisterStep.click_on_company_and_add(java.lang.String)
+  ? And click on Password and add Bhosale@1234            # StepDefinition.RegisterStep.click_on_password_and_add(java.lang.String)
+  ? And click on Confirm Password and enter Bhosale@1234  # StepDefinition.RegisterStep.click_on_confirm_password_and_enter(java.lang.String)
+  ? And click on Register Button                          # StepDefinition.RegisterStep.click_on_register_button()
+  ? And click on continue button to navigate to home page # StepDefinition.RegisterStep.click_on_continue_button_to_navigate_to_home_page()
+Registration failed: Duplicate email.
+  ? Then Successfully Registered and open home page       # StepDefinition.RegisterStep.successfully_registered_and_open_home_page()
+
+@Priority01
+Scenario Outline: Successful Registration                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/01Register.feature:25
+Sept 07, 2025 10:38:51 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:38:51 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Register page should open in default browser    # StepDefinition.RegisterStep.register_page_should_open_in_default_browser()
+  ? When Page Loads click on Register button              # StepDefinition.RegisterStep.page_loads_click_on_register_button()
+  ? And Select Gender                                     # StepDefinition.RegisterStep.select_gender()
+  ? And click on First Name and add Peter                 # StepDefinition.RegisterStep.click_on_first_name_and_add(java.lang.String)
+  ? And click on Last Name and add Parker                 # StepDefinition.RegisterStep.click_on_last_name_and_add(java.lang.String)
+  ? And click on Email and add peter03@gmail.com          # StepDefinition.RegisterStep.click_on_email_and_add(java.lang.String)
+  ? And click on Company and add Wipro                    # StepDefinition.RegisterStep.click_on_company_and_add(java.lang.String)
+  ? And click on Password and add Bhosale@1234            # StepDefinition.RegisterStep.click_on_password_and_add(java.lang.String)
+  ? And click on Confirm Password and enter Bhosale@1234  # StepDefinition.RegisterStep.click_on_confirm_password_and_enter(java.lang.String)
+  ? And click on Register Button                          # StepDefinition.RegisterStep.click_on_register_button()
+  ? And click on continue button to navigate to home page # StepDefinition.RegisterStep.click_on_continue_button_to_navigate_to_home_page()
+Registration failed: Duplicate email.
+  ? Then Successfully Registered and open home page       # StepDefinition.RegisterStep.successfully_registered_and_open_home_page()
+
+@Priority02
+Scenario Outline: Login with multiple credentials               # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:26
+Sept 07, 2025 10:39:10 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:39:10 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser             # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button                      # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter prasenjitbhosale1234@gmail.com # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter Bhosale@1234                # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                                   # StepDefinition.LoginStep.click_on_login_button()
+Expected: true | Actual: true
+  ? Then login successful and true                              # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority02
+Scenario Outline: Login with multiple credentials   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:27
+Sept 07, 2025 10:39:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:39:17 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button          # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter user1@test.com     # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter randomfakepass  # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                       # StepDefinition.LoginStep.click_on_login_button()
+Expected: false | Actual: false
+  ? Then login successful and false                 # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority02
+Scenario Outline: Login with multiple credentials               # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:28
+Sept 07, 2025 10:39:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:39:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser             # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button                      # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter prasenjitbhosale1234@gmail.com # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter Bhosale@1234                # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                                   # StepDefinition.LoginStep.click_on_login_button()
+Expected: true | Actual: true
+  ? Then login successful and true                              # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority02
+Scenario Outline: Login with multiple credentials       # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:29
+Sept 07, 2025 10:40:01 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:01 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser     # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button              # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter prasenjit101@gmail.com # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter Bhosale@1234        # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                           # StepDefinition.LoginStep.click_on_login_button()
+Expected: true | Actual: true
+  ? Then login successful and true                      # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority02
+Scenario Outline: Login with multiple credentials   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:30
+Sept 07, 2025 10:40:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:08 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button          # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter peter01@gmail.com  # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter Bhosale@1234    # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                       # StepDefinition.LoginStep.click_on_login_button()
+Expected: true | Actual: true
+  ? Then login successful and true                  # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority02
+Scenario Outline: Login with multiple credentials   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/02Login.feature:31
+Sept 07, 2025 10:40:18 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:18 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login Page should open in default browser # StepDefinition.LoginStep.login_page_should_open_in_default_browser()
+  ? When Page Loads click on Log In Button          # StepDefinition.LoginStep.page_loads_click_on_log_in_button()
+  ? And click on email and enter peter02@gmail.com  # StepDefinition.LoginStep.click_on_email_and_enter(java.lang.String)
+  ? And click on password and enter Bhosale@1234    # StepDefinition.LoginStep.click_on_password_and_enter(java.lang.String)
+  ? And click on login button                       # StepDefinition.LoginStep.click_on_login_button()
+Expected: true | Actual: true
+  ? Then login successful and true                  # StepDefinition.LoginStep.login_successful_and_status(java.lang.String)
+
+@Priority03
+Scenario Outline: check search is Succesful    # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/03Search.feature:11
+Sept 07, 2025 10:40:24 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:24 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login User and search bar available  # StepDefinition.SearchSteps.login_user_and_search_bar_available()
+  ? When Enter laptop  and click search button # StepDefinition.SearchSteps.enter_item_and_click_search_button(java.lang.String)
+Sept 07, 2025 10:40:33 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then list of output relevant to input      # StepDefinition.SearchSteps.list_of_output_relevant_to_input()
+
+@Priority03
+Scenario Outline: check search is Succesful   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/03Search.feature:12
+Sept 07, 2025 10:40:35 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:35 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login User and search bar available # StepDefinition.SearchSteps.login_user_and_search_bar_available()
+  ? When Enter shoes  and click search button # StepDefinition.SearchSteps.enter_item_and_click_search_button(java.lang.String)
+Sept 07, 2025 10:40:43 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then list of output relevant to input     # StepDefinition.SearchSteps.list_of_output_relevant_to_input()
+
+@Priority03
+Scenario Outline: check search is Succesful   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/03Search.feature:13
+Sept 07, 2025 10:40:45 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:45 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login User and search bar available # StepDefinition.SearchSteps.login_user_and_search_bar_available()
+  ? When Enter phone  and click search button # StepDefinition.SearchSteps.enter_item_and_click_search_button(java.lang.String)
+Sept 07, 2025 10:40:54 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then list of output relevant to input     # StepDefinition.SearchSteps.list_of_output_relevant_to_input()
+
+@Priority03
+Scenario Outline: check search is Succesful   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/03Search.feature:14
+Sept 07, 2025 10:40:56 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:40:56 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Login User and search bar available # StepDefinition.SearchSteps.login_user_and_search_bar_available()
+  ? When Enter book  and click search button  # StepDefinition.SearchSteps.enter_item_and_click_search_button(java.lang.String)
+Sept 07, 2025 10:41:05 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then list of output relevant to input     # StepDefinition.SearchSteps.list_of_output_relevant_to_input()
+
+@Priority04
+Scenario:                                                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/04ProductDescription.feature:3
+Sept 07, 2025 10:41:07 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:41:07 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given open website for view product                   # StepDefinition.ProductDescriptionStep.open_website_for_view_product()
+  ? When Page loads click on search enter item and search # StepDefinition.ProductDescriptionStep.page_loads_click_on_search_enter_item_and_search()
+  ? And click on product                                  # StepDefinition.ProductDescriptionStep.click_on_product()
+Sept 07, 2025 10:41:25 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful viewed product description            # StepDefinition.ProductDescriptionStep.successful_viewed_product_description()
+
+@Priority05
+Scenario: Successfully added item to cart                 # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/05AddToCart.feature:3
+Sept 07, 2025 10:41:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:41:27 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Open Website and add to cart                    # StepDefinition.AddToCartStep.open_website_and_add_to_cart()
+  ? When Page loads login to website                      # StepDefinition.AddToCartStep.page_loads_login_to_website()
+  ? And click on searchbar then  enter an item and search # StepDefinition.AddToCartStep.click_on_searchbar_then_enter_an_item_and_search()
+  ? And open and view product                             # StepDefinition.AddToCartStep.open_and_view_product()
+  ? And add item to cart                                  # StepDefinition.AddToCartStep.add_item_to_cart()
+  ? And go to cart                                        # StepDefinition.AddToCartStep.go_to_cart()
+Item added to cart 
+Sept 07, 2025 10:42:02 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful add item to cart                      # StepDefinition.AddToCartStep.successful_add_item_to_cart()
+
+@Priority06
+Scenario:                                                           # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/06RemoveFromCart.feature:3
+Sept 07, 2025 10:42:04 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:42:04 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Open Website and hover check shopping cart                # StepDefinition.RemoveFromCartStep.open_website_and_hover_check_shopping_cart()
+  ? When Page loads first login to the website for smooth cart flow # StepDefinition.RemoveFromCartStep.page_loads_first_login_to_the_website_for_smooth_cart_flow()
+  ? And Hover over shopping cart and click on go to cart            # StepDefinition.RemoveFromCartStep.hover_over_shopping_cart_and_click_on_go_to_cart()
+  ? And Click on remove product cross button                        # StepDefinition.RemoveFromCartStep.click_on_remove_product_cross_button()
+Sept 07, 2025 10:42:26 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful item removed from cart                          # StepDefinition.RemoveFromCartStep.successful_item_removed_from_cart()
+
+@Priority07
+Scenario: Successfully change currency                                    # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/07ChangeCurrency.feature:3
+Sept 07, 2025 10:42:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:42:27 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given open website and currencybox available                          # StepDefinition.CurrencyChangeStep.open_website_and_currencybox_available()
+  ? When Page Loads click on Currency Change Dropdown and select currency # StepDefinition.CurrencyChangeStep.page_loads_click_on_currency_change_dropdown_and_select_currency()
+  ? Then Successful changed currency                                      # StepDefinition.CurrencyChangeStep.successful_changed_currency()
+
+@Priority8
+Scenario: successfully compare product                       # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/08CompareProduct.feature:3
+Sept 07, 2025 10:42:39 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:42:39 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given open website to compare                            # StepDefinition.CompareProductStep.open_website_to_compare()
+  ? When Page loads hover on computers and go to notebooks   # StepDefinition.CompareProductStep.page_loads_hover_on_computers_and_go_to_notebooks()
+  ? And add first product to compare                         # StepDefinition.CompareProductStep.add_first_product_to_compare()
+  ? And add second product to compare                        # StepDefinition.CompareProductStep.add_second_product_to_compare()
+  ? And go to compare products list and wait and scroll down # StepDefinition.CompareProductStep.go_to_compare_products_list_and_wait_and_scroll_down()
+Sept 07, 2025 10:43:15 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successfully compared product                       # StepDefinition.CompareProductStep.successfully_compared_product()
+
+@Priority09
+Scenario: Successfully Added new Address          # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/09AddAddress.feature:3
+Sept 07, 2025 10:43:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:43:17 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Website must open in default browser    # StepDefinition.AddNewAddressStep.website_must_open_in_default_browser()
+  ? When Page Loads Login and click on My Account # StepDefinition.AddNewAddressStep.page_loads_login_and_click_on_my_account()
+  ? And click on addresses                        # StepDefinition.AddNewAddressStep.click_on_addresses()
+  ? And click on add new Button                   # StepDefinition.AddNewAddressStep.click_on_add_new_button()
+  ? And fill address information                  # StepDefinition.AddNewAddressStep.fill_address_information()
+  ? And click on save button                      # StepDefinition.AddNewAddressStep.click_on_save_button()
+Sept 07, 2025 10:43:47 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful add a new address             # StepDefinition.AddNewAddressStep.successful_add_a_new_address()
+
+@Priority10
+Scenario: Successfully checkout an item                   # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/10Checkout.feature:3
+Sept 07, 2025 10:43:49 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:43:49 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given open website in default browser                 # StepDefinition.CheckoutStep.open_website_in_default_browser()
+  ? When Page loads click login account                   # StepDefinition.CheckoutStep.page_loads_click_login_account()
+  ? And search an item                                    # StepDefinition.CheckoutStep.search_an_item()
+  ? And open product description                          # StepDefinition.CheckoutStep.open_product_description()
+  ? And add that product to cart and go to cart           # StepDefinition.CheckoutStep.add_that_product_to_cart_and_go_to_cart()
+  ? And click on checkbox of terms of service             # StepDefinition.CheckoutStep.click_on_checkbox_of_terms_of_service()
+  ? And click on checkout button                          # StepDefinition.CheckoutStep.click_on_checkout_button()
+  ? And click on continue button billing addresss step    # StepDefinition.CheckoutStep.click_on_continue_button_billing_addresss_step()
+  ? And click on continue button shipping method step     # StepDefinition.CheckoutStep.click_on_continue_button_shipping_method_step()
+  ? And click on continue button payment method step      # StepDefinition.CheckoutStep.click_on_continue_button_payment_method_step()
+  ? And click on continue button payment information step # StepDefinition.CheckoutStep.click_on_continue_button_payment_information_step()
+  ? And click on confirm button confirm order step        # StepDefinition.CheckoutStep.click_on_confirm_button_confirm_order_step()
+  ? And click on order details link                       # StepDefinition.CheckoutStep.click_on_order_details_link()
+  ? And view order information page                       # StepDefinition.CheckoutStep.view_order_information_page()
+  ? And see all your order in all orders page             # StepDefinition.CheckoutStep.see_all_your_order_in_all_orders_page()
+Sept 07, 2025 10:44:18 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful checked out item                      # StepDefinition.CheckoutStep.successful_checked_out_item()
+
+@Priority11
+Scenario: Successfully added item to wishlist            # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/11Wishlist.feature:3
+Sept 07, 2025 10:44:21 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:44:21 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given Website should open in default browser         # StepDefinition.WishlistStep.website_should_open_in_default_browser()
+  ? When Page loads click on searchbar and enter product # StepDefinition.WishlistStep.page_loads_click_on_searchbar_and_enter_product()
+  ? And view product                                     # StepDefinition.WishlistStep.view_product()
+  ? And Add item to Wishlist                             # StepDefinition.WishlistStep.add_item_to_wishlist()
+  ? And close wishlist popup                             # StepDefinition.WishlistStep.close_wishlist_popup()
+  ? And click on wishlist button in navbar               # StepDefinition.WishlistStep.click_on_wishlist_button_in_navbar()
+  ? And remove item from wishlist                        # StepDefinition.WishlistStep.remove_item_from_wishlist()
+Sept 07, 2025 10:44:41 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successful updatation in cart                   # StepDefinition.WishlistStep.successful_updatation_in_cart()
+
+@Priority12
+Scenario: successful logout                        # file:///C:/Users/prase/.jenkins/workspace/NopCommerceCapstoneProject/CucumberNopCommerce/src/test/resources/features/12Logout.feature:3
+Sept 07, 2025 10:44:43 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 139
+Sept 07, 2025 10:44:43 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 139.0.7258.155. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+  ? Given page should open in default browser      # StepDefinition.LogoutStep.page_should_open_in_default_browser()
+  ? When the page loads first login to the website # StepDefinition.LogoutStep.the_page_loads_first_login_to_the_website()
+  ? And click on Logout button                     # StepDefinition.LogoutStep.click_on_logout_button()
+Sept 07, 2025 10:44:59 AM org.openqa.selenium.remote.http.WebSocket$Listener onError
+WARNING: Connection reset
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:401)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:434)
+	at java.net.http/jdk.internal.net.http.SocketTube.readAvailable(SocketTube.java:1178)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.read(SocketTube.java:841)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowTask.run(SocketTube.java:181)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler$SchedulableTask.run(SequentialScheduler.java:207)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:280)
+	at java.net.http/jdk.internal.net.http.common.SequentialScheduler.runOrSchedule(SequentialScheduler.java:233)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$InternalReadSubscription.signalReadable(SocketTube.java:782)
+	at java.net.http/jdk.internal.net.http.SocketTube$InternalReadPublisher$ReadEvent.signalEvent(SocketTube.java:965)
+	at java.net.http/jdk.internal.net.http.SocketTube$SocketFlowEvent.handle(SocketTube.java:253)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.handleEvent(HttpClientImpl.java:1469)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.lambda$run$3(HttpClientImpl.java:1414)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.net.http/jdk.internal.net.http.HttpClientImpl$SelectorManager.run(HttpClientImpl.java:1414)
+
+  ? Then successfully logged out                   # StepDefinition.LogoutStep.successfully_logged_out()
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 439.8 s -- in StepDefinition.TestRunner
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 24, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.4.1:jar (default-jar) @ CucumberNopCommerce ---
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: C:\Users\prase\.jenkins\workspace\NopCommerceCapstoneProject\CucumberNopCommerce\target\CucumberNopCommerce-0.0.1-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  07:26 min
+[INFO] Finished at: 2025-09-07T10:45:00+05:30
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // dir
+Post stage
+[Pipeline] junit
+Recording test results
+[Checks API] No suitable checks publisher found.
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
