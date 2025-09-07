@@ -16,10 +16,12 @@ And click on continue button to navigate to home page
 Then Successfully Registered and open home page
 
 Examples:
-  | fname     | lname   | email                   | company | password     | confirmPassword |
-  | Prasenjit    | Bhosale   | prasenjit1234@gmail.com    | Wipro | Bhosale@1234  | Bhosale@1234|
+Examples:
+  | fname     | lname   | email                  | company | password     | confirmPassword |
   | Prasenjit | Bhosale | prasenjit101@gmail.com | Wipro   | Bhosale@1234 | Bhosale@1234    |
-  | Peter    | Parker   | peter01@gmail.com    | Infosys | Bhosale@1234  | Bhosale@1234     |
+  | Prasenjit | Bhosale | prasenjit1234@gmail.com| Wipro   | Bhosale@1234 | Bhosale@1234    |
+  | Peter     | Parker  | peter01@gmail.com      | Infosys | Bhosale@1234 | Bhosale@1234    |
+
 
 
 

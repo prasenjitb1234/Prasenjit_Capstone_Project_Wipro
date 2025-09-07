@@ -87,12 +87,12 @@ public class LoginStep {
         pc.clickloginlink_in();
     }
 
-    @And("click on email and enter {string}")
+    @And("^click on email and enter (.*)$")
     public void click_on_email_and_enter(String email) {
         pc.email_in(email);
     }
 
-    @And("click on password and enter {string}")
+    @And("^click on password and enter (.*)$")
     public void click_on_password_and_enter(String password) {
         pc.password_in(password);
     }
@@ -102,7 +102,7 @@ public class LoginStep {
         pc.loginbtn_in();
     }
 
-    @Then("login successful and {string}")
+    @Then("^login successful and (.*)$")
     public void login_successful_and_status(String status) {
         boolean expected = Boolean.parseBoolean(status);
         boolean actual = pc.isLoggedIn();

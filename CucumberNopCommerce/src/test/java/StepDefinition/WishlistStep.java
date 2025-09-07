@@ -23,7 +23,7 @@ public class WishlistStep {
 
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 
 	@When("Page loads click on searchbar and enter product")

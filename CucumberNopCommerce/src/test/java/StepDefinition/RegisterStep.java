@@ -34,32 +34,32 @@ public class RegisterStep {
         pc.gender_in();
     }
 
-    @And("click on First Name and add {string}")
+    @And("^click on First Name and add (.*)$")
     public void click_on_first_name_and_add(String fname) {
         pc.fname_in(fname);
     }
 
-    @And("click on Last Name and add {string}")
+    @And("^click on Last Name and add (.*)$")
     public void click_on_last_name_and_add(String lname) {
         pc.lname_in(lname);
     }
 
-    @And("click on Email and add {string}")
+    @And("^click on Email and add (.*)$")
     public void click_on_email_and_add(String email) {
         pc.email_in_register(email);
     }
 
-    @And("click on Company and add {string}")
+    @And("^click on Company and add (.*)$")
     public void click_on_company_and_add(String company) {
         pc.company_in(company);
     }
 
-    @And("click on Password and add {string}")
+    @And("^click on Password and add (.*)$")
     public void click_on_password_and_add(String password) {
         pc.password_in_register(password);
     }
 
-    @And("click on Confirm Password and enter {string}")
+    @And("^click on Confirm Password and enter (.*)$")
     public void click_on_confirm_password_and_enter(String confirmPassword) {
         pc.confirmPassword_in(confirmPassword);
     }

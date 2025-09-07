@@ -21,7 +21,7 @@ public class AddNewAddressStep {
 		driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 	}
 
@@ -42,7 +42,7 @@ public class AddNewAddressStep {
 		if (pc.isLoggedIn()) {
 			pc.myaccount_in();
 		} else {
-			throw new RuntimeException("Login failed - please check credentials!");
+			throw new RuntimeException("Login failed");
 		}
 
 	}

@@ -449,13 +449,13 @@ public class PageClass {
 //	***************** Compare Product button ***********************************
 
 	public void compareprodbtn_in() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		WebElement compareBtn = wait.until(ExpectedConditions.elementToBeClickable(compareproductbtn));
 		compareBtn.click();
 	}
 
 	public void compareproductlisttab_in() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 		WebElement compareTab = wait.until(ExpectedConditions.elementToBeClickable(compareproductlisttab));
 		compareTab.click();
 	}

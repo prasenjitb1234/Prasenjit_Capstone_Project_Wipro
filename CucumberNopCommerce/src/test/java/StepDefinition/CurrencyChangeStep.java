@@ -23,7 +23,7 @@ public class CurrencyChangeStep {
 		driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 
 	@When("Page Loads click on Currency Change Dropdown and select currency")
