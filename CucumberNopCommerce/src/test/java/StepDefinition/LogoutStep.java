@@ -19,7 +19,7 @@ public class LogoutStep {
 		driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		pc = new PageClass(driver);
 	}
 

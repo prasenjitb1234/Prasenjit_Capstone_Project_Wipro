@@ -23,9 +23,10 @@ Scenario Outline: Login with multiple credentials
 
 Examples:
   | email                          | password      | status |
-     | prasenjitbhosale1234@gmail.com | Bhosale@1234  | true   |
-     
-#  | user1@test.com | randomfakepass     | false  |
+  | prasenjitbhosale1234@gmail.com | Bhosale@1234  | true   |
+  | user1@test.com | randomfakepass     | false  |
+  |prasenjit101@gmail.com| Bhosale@1234 | true    |
+  
 #    | spiderman01@gmail.com | spiderman01 | true   |
 #    | spiderman02@gmail.com | spiderman02 | true   | 
 #    | prasenjitbhosale111@gmail.com | Bhosale@1234  | true   |

@@ -69,6 +69,7 @@ import io.cucumber.java.en.*;
 
 public class LoginStep {
 
+
     WebDriver driver;
     PageClass pc;
 
@@ -82,36 +83,30 @@ public class LoginStep {
     }
 
     @When("Page Loads click on Log In Button")
-    public void page_loads_click_on_log_in_button() throws InterruptedException {
-    	Thread.sleep(2000);
+    public void page_loads_click_on_log_in_button() {
         pc.clickloginlink_in();
     }
 
     @And("click on email and enter {string}")
-    public void click_on_email_and_enter_email(String email) throws InterruptedException {
-    	Thread.sleep(2000);
-    	System.out.println("Entered email : "+email);
+    public void click_on_email_and_enter(String email) {
         pc.email_in(email);
     }
 
     @And("click on password and enter {string}")
-    public void click_on_password_and_enter_password(String password) throws InterruptedException {
-        System.out.println("entered password : "+password);
-    	pc.password_in(password);
-        
-        
+    public void click_on_password_and_enter(String password) {
+        pc.password_in(password);
     }
 
     @And("click on login button")
-    public void click_on_login_button() throws InterruptedException {
-    	Thread.sleep(2000);
+    public void click_on_login_button() {
         pc.loginbtn_in();
     }
 
     @Then("login successful and {string}")
-    public void login_successful_and_status(String status) throws InterruptedException {
-       
-    	Thread.sleep(5000);
-        driver.close();
+    public void login_successful_and_status(String status) {
+        boolean expected = Boolean.parseBoolean(status);
+        boolean actual = pc.isLoggedIn();
+        System.out.println("Expected: " + expected + " | Actual: " + actual);
+        driver.quit();
     }
 }

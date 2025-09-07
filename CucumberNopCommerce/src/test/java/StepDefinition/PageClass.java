@@ -16,7 +16,7 @@ public class PageClass {
 
 	public PageClass(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	}
 
 	// logout locator :
@@ -132,91 +132,87 @@ public class PageClass {
 
 //	---------------------------------------------------------------------------
 
-	// ************* login ***************
-	public void clickloginlink_in() throws InterruptedException {
-		Thread.sleep(1000);
-		driver.findElement(loginlink).click();
+	// ************* Login *************
+	public void clickloginlink_in() {
+		wait.until(ExpectedConditions.elementToBeClickable(loginlink)).click();
 	}
 
-	// this for register
-	public void email_in() {
-		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
-//		emailField.sendKeys("prasenjitbhosale1234@gmail.com");
-//		emailField.sendKeys("prasenjitbhosale111@gmail.com");
-//		emailField.sendKeys("spiderman01@gmail.com");
-//		emailField.sendKeys("prasenjit08@gmail.com");
-//		emailField.sendKeys("prasenjit10@gmail.com");
-//		emailField.sendKeys("prasenjit11@gmail.com");
-		emailField.sendKeys("prasenjit12@gmail.com");
-		
-
-	}
-
-	// this for register
-	public void password_in() throws InterruptedException {
-		Thread.sleep(1000);
-		driver.findElement(password).click();
-		driver.findElement(password).sendKeys("Bhosale@1234");
-	}
-
-	// this for login
 	public void email_in(String emailText) {
 		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
 		emailField.clear();
 		emailField.sendKeys(emailText);
 	}
 
-	// this for login
-	public void password_in(String passwordText) throws InterruptedException {
-		Thread.sleep(1000);
-		WebElement passField = driver.findElement(password);
+	public void password_in(String passwordText) {
+		WebElement passField = wait.until(ExpectedConditions.visibilityOfElementLocated(password));
 		passField.clear();
 		passField.sendKeys(passwordText);
 	}
 
-	public void loginbtn_in() throws InterruptedException {
-		Thread.sleep(1000);
-		driver.findElement(loginbtn).click();
+	public void loginbtn_in() {
+		wait.until(ExpectedConditions.elementToBeClickable(loginbtn)).click();
 	}
 
-//************* register ***************
+	// ************* Register *************
 	public void clickregisterlink_in() {
-		driver.findElement(registerlink).click();
+		wait.until(ExpectedConditions.elementToBeClickable(registerlink)).click();
 	}
 
 	public void gender_in() {
-		driver.findElement(gender).click();
+		wait.until(ExpectedConditions.elementToBeClickable(gender)).click();
 	}
 
-	public void fname_in() {
-		driver.findElement(fname).click();
-		driver.findElement(fname).sendKeys("Prasenjit");
+	public void fname_in(String fnameText) {
+		WebElement fnameField = wait.until(ExpectedConditions.visibilityOfElementLocated(fname));
+		fnameField.clear();
+		fnameField.sendKeys(fnameText);
 	}
 
-	public void lname_in() {
-		driver.findElement(lname).click();
-		driver.findElement(lname).sendKeys("Bhosale");
+	public void lname_in(String lnameText) {
+		WebElement lnameField = wait.until(ExpectedConditions.visibilityOfElementLocated(lname));
+		lnameField.clear();
+		lnameField.sendKeys(lnameText);
 	}
 
-	public void company_in() {
-		driver.findElement(company).click();
-		driver.findElement(company).sendKeys("Wipro");
+	public void email_in_register(String emailText) {
+		WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(email));
+		emailField.clear();
+		emailField.sendKeys(emailText);
 	}
 
-	public void confirmPassword_in() {
-		driver.findElement(confirmPassword).click();
-		driver.findElement(confirmPassword).sendKeys("Bhosale@1234");
+	public void company_in(String companyText) {
+		WebElement companyField = wait.until(ExpectedConditions.visibilityOfElementLocated(company));
+		companyField.clear();
+		companyField.sendKeys(companyText);
+	}
+
+	public void password_in_register(String passwordText) {
+		WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(password));
+		passwordField.clear();
+		passwordField.sendKeys(passwordText);
+	}
+
+	public void confirmPassword_in(String confirmPasswordText) {
+		WebElement confirmPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmPassword));
+		confirmPasswordField.clear();
+		confirmPasswordField.sendKeys(confirmPasswordText);
 	}
 
 	public void registerbtn_in() {
-
-		driver.findElement(registerbtn).click();
+		wait.until(ExpectedConditions.elementToBeClickable(registerbtn)).click();
 	}
 
-	public void continuebtn_in() throws InterruptedException {
-		Thread.sleep(2000);
-		WebElement contBtn = wait.until(ExpectedConditions.elementToBeClickable(continuebtn));
-		contBtn.click();
+	public void continuebtn_in() {
+		wait.until(ExpectedConditions.elementToBeClickable(continuebtn)).click();
+	}
+
+	public boolean isLoggedIn() {
+		try {
+			wait.until(ExpectedConditions.visibilityOfElementLocated(myaccountbtn));
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 //	*********** search Multiple***************
@@ -234,8 +230,6 @@ public class PageClass {
 		driver.findElement(searchbar).sendKeys("iphone");
 		driver.findElement(searchbtn).sendKeys(Keys.ENTER);
 	}
-
-//	*********** Product Description ***************
 
 	// *********** Product Description ***************
 	public void productdescription() {
@@ -256,18 +250,16 @@ public class PageClass {
 	}
 
 	// *********** Shopping Cart *******
-	public void shoppingcart_in() throws InterruptedException {
+
+	public void shoppingcart_in() {
 		Actions act = new Actions(driver);
 
 		WebElement shoppingcartHover = wait.until(ExpectedConditions.visibilityOfElementLocated(shoppingcart));
 		act.moveToElement(shoppingcartHover).perform();
 
-		// Wait until "Go to cart" is visible and clickable
-		Thread.sleep(2000);
 		WebElement goToCart = wait.until(ExpectedConditions.elementToBeClickable(gotocartbtn));
 		goToCart.click();
 	}
-
 	// ********* remove item from cart
 
 	public void removefromcartbtn_in() {
@@ -367,15 +359,6 @@ public class PageClass {
 		saveBtn.click();
 	}
 
-	public boolean isLoggedIn() {
-		try {
-			wait.until(ExpectedConditions.visibilityOfElementLocated(myaccountbtn));
-			return true;
-		} catch (Exception e) {
-			return false;
-		}
-	}
-
 	// ********* change password *********************************
 
 	public void changepasswordtablink_in() {
@@ -396,7 +379,8 @@ public class PageClass {
 	}
 
 	public void confirmnewpasswordchange_in() {
-		WebElement confirmNewPasswordField = wait.until(ExpectedConditions.visibilityOfElementLocated(confirmnewpasswordchange));
+		WebElement confirmNewPasswordField = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(confirmnewpasswordchange));
 		confirmNewPasswordField.clear();
 		confirmNewPasswordField.sendKeys("Bhosale@1234");
 	}
@@ -479,14 +463,9 @@ public class PageClass {
 	// ***************** logout button ***********************************
 
 	public void logoutbtn_in() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(logoutbtn));
 
 		WebElement logout = wait.until(ExpectedConditions.elementToBeClickable(logoutbtn));
 		logout.click();
 	}
-
-//	***************************************************************************
 
 }
