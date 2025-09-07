@@ -18,6 +18,7 @@ Then Successfully Registered and open home page
 Examples:
 Examples:
   | fname     | lname   | email                  | company | password     | confirmPassword |
+  | Prasenjit | Bhosale | prasenjit102@gmail.com | Wipro   | Bhosale@1234 | Bhosale@1234    |
   | Prasenjit | Bhosale | prasenjit101@gmail.com | Wipro   | Bhosale@1234 | Bhosale@1234    |
   | Prasenjit | Bhosale | prasenjit1234@gmail.com| Wipro   | Bhosale@1234 | Bhosale@1234    |
   | Peter     | Parker  | peter01@gmail.com      | Infosys | Bhosale@1234 | Bhosale@1234    |
